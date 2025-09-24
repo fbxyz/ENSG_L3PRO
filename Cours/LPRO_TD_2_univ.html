@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>L3_Cours 1_stat</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Florian Bayer" />
+    <script src="assets/header-attrs-2.29/header-attrs.js"></script>
+    <link rel="stylesheet" href="assets/css/theme_flo.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/mtheme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/fonts_mtheme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/tools.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+class: center, middle, inverse, title-slide, animated, fadeIn
+# Analyse des données Licence Pro 2025-2026
+# TD n°2- L'analyse univariée&lt;br /&gt; &lt;br /&gt;
+### Florian Bayer
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Objectif du TD 2
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+Les objectifs de ce TD sont de mettre en application les acquis du cours 2 sur l'analyse d'une série de données
+- avec des graphiques
+- les valeures centrales
+- les paramètres de dispersion
+
+Vous apprendrez à utiliser un outil d'analyse de données : Orange
+
+---
+class: animated, fadeIn
+## Orange : présentation
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+Orange est un logiciel open source dédié à l'analyse de données, à l'exploration visuelle et à l'apprentissage automatique.
+
+Basé sur des packages Python pour les analyses, son interface graphique intuitive permet de construire des **flux de travail** ou workflow, sans avoir à écrire de code.
+
+Contrairement à Excel et comme lorsque l'on utilise du code, l'avantage d'Orange est de pouvoir relancer chaque étape du calcul pour le vérifier ou le modifier.
+
+
+---
+class: animated, fadeIn
+## Orange : présentation
+
+La vue principale d'Orange ressemble à une toile vide où vous pouvez commencer à ajouter des **widgets** pour créer un **workflow**. 
+
+A gauche la zone de widgets, à droite l'espace de travail.
+
+.center-img[
+&lt;img src="./assets/images/TD/TD2_orange_main.png" width="100%" /&gt;
+] 
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Orange : les widgets
+
+.pull-left[
+Les widgets sont des modules préconfigurés qui permettent d'importer, de traiter, d'analyser et de visualiser des données. À gauche de l'écran se trouve une barre d'outils avec les catégories de widgets comme :
+- Data : Chargement, transformation, filtrage des données
+- Visualize : Graphiques et visualisations
+- Model : Apprentissage automatique (classification, régression)
+- Evaluate : Validation de modèles
+]
+
+.pull-right[
+&lt;img src="./assets/images/TD/TD2_orange_widgets.png" width="70%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Orange : chargement des données
+
+.pull-left[
+Le chargement des données se fait à travers le widget "File" dans la catégorie "Data". Il vous permet d'importer des fichiers sous différents formats, y compris CSV ou Excel
+
+- Ajoutez le widget "File" : Glissez-déposez le widget *File* depuis la barre d'outils dans l'espace de travail.
+- Sélectionnez le fichier : Cliquez sur le widget "File" puis ouvrez **hdi-edu.xlsx**. Vérifiez que vous avez bien la feuille de calcul Data
+- Orange détermine seul chaque type de données, mais vous pouvez les modifier manuellement via la colonne **Type**
+- Fermez le widget *File*
+]
+
+.pull-right[
+&lt;img src="./assets/images/TD/TD2_orange_data.png" width="100%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Orange : afficher les données
+
+.pull-left[
+- Dans la catégorie Data, sélectionnez et faites glisser le widget Data Table
+- A l'aide de la souris, connectez la sortie du widget *File* à l'entrée du widget *Data Table*
+- Vous pouvez voir maintenant le contenu des données via le widget *Data Table*
+- Comme ils sont liés, tous changements dans le widget *File* entraînera une modification dans le widget *Data Table*
+- Vous pouvez sélectionner des lignes dans *Data Table*, mais cela aura aussi un impact sur les futurs calculs. Ils ne se feront que sur les lignes sélectionnées
+]
+
+.pull-right[
+&lt;img src="./assets/images/TD/TD2_orange_datatable.png" width="100%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Orange : Statistiques univariée
+
+.pull-left[
+- Ajoutez le widget *Feature Statistics*, toujours dans la catégorie Data.
+- Connectez le à la sortie de *Data Table*
+- Un histogramme, des valeurs centrales et des paramètres de dispersion sont disponibles
+- Notez que Dispersion correspond au coefficient de variation pour les données quantitatives
+- Attention, pensez à vérifier que vous n'avez pas de ligne sélectionnée dans Data Table, sinon les calculs de *Feature Statistics* seront uniquement fait sur votre sélection
+- Notez que vous pouvez appliquer une couleur aux histogrammes pour les distinguer à l'aide d'une variable qualitative. Par exemple par continent.
+]
+
+.pull-right[
+&lt;img src="./assets/images/TD/TD2_orange_featurestat.png" width="100%" /&gt;
+Faites l'analyse univariée de la variable **esperance_vie**. Que pouvez-vous en conclure ?
+]
+
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Orange : Histogramme
+
+.pull-left[
+- A partir de la catégorie Visualize, ajoutez le widget *Distributions*.
+- Connectez le à la sortie de *Data Table*
+- Les données qualitatives (Category) sont représentées par un diagramme en bâton
+- Les données quantitatives par un histogramme
+- Pour ce dernier, vous pouvez modifier le nombre de *bins*
+
+Comme précédemment, vous pouvez appliquer une catégorie pour découper l'histogramme selon les modalités de cette dernière. Pour la variable **esperance_vie**, faites un split par **transition_epi**. Que pouvez-vous en conclure ? N'oubliez pas de consulter les métadonnées (onglet Meta du fichier Excel) pour plus de détails
+]
+
+.pull-right[
+&lt;img src="./assets/images/TD/TD2_orange_histo.png" width="100%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Orange : Box Plot
+
+.pull-left[
+- Ajoutez maintenant un Box Plot.
+- Connectez le à la sortie de *Data Table*
+
+Analysez la distribution de **taux_fertilite**, puis faites un sous-groupe avec transition_demo. 
+
+Que pouvez-vous en conclure ? 
+
+**Pensez à sauvegarder votre projet Orange, nous le réutiliserons pour le TD4**
+]
+
+.pull-right[
+&lt;img src="./assets/images/TD/TD2_orange_boxplot.png" width="100%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Fin du TD2
+
+Orange est surtout utilisé en bio informatique et machine learning, mais sa simplicité de prise en main en font un très bon outil pour débuter en statistique et analyse de données.
+
+Dans ce TD, vous avez appris :
+- A charger des données dans Orange
+- A réaliser des calculs simples de variables centrales et paramètres de dispersion
+- A créer des graphiques
+- A interpréter vos résultats
+
+Comme vous l'avez remarqué, certaines de vos données varient fortement dans l'espace. La carte est alors le meilleur moyen de les représenter.
+
+Dans le prochain cours, nous verrons ensemble comment bien cartographier ces résultats.
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="assets/libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

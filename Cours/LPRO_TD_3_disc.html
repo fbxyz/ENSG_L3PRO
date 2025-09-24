@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>L3_Cours 1_stat</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Florian Bayer" />
+    <script src="assets/header-attrs-2.29/header-attrs.js"></script>
+    <link rel="stylesheet" href="assets/css/theme_flo.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/mtheme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/fonts_mtheme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/tools.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+class: center, middle, inverse, title-slide, animated, fadeIn
+# Analyse des données Licence Pro 2025-2026
+# TD n°3- La discrétisation en cartographie&lt;br /&gt; &lt;br /&gt;
+### Florian Bayer
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Objectif du TD 3
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+Les objectifs de ce TD sont de mettre en application les acquis du cours 3 sur la discrétisation en cartographie
+
+Vous apprendrez à utiliser un outil d'analyse de cartographie : Magrit
+
+---
+class: animated, fadeIn
+## Magrit : présentation
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+Magrit est un logiciel de cartographie en ligne.
+
+Il permet de créer facilement des cartes, de les discrétiser et même de les mettre en page.
+
+Il est accessible directement via https://magrit.cnrs.fr/app/
+
+Vous pouvez aussi le déployer sur votre serveur avec Docker
+
+---
+class: animated, fadeIn
+## Magrit : présentation
+
+La vue principale de Magrit est composée d'une zone d'affichage pour la carte et d'une barre d'outils
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_main.png" width="100%" /&gt;
+]
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : charger le fond de carte
+
+Il faut charger dans un premier temps le fond de carte :
+- Cliquez sur *Ouvrir la fenêtre d'import des données*
+- Chargez le fichier **monde_iso3.geojson**
+- Cliquez sur *Zoomer sur la couche*
+- Ne **cliquez pas** encore sur *Importer le jeu de données*
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_fond.png" width="80%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+
+---
+class: animated, fadeIn
+## Magrit : charger les données
+
+Le fond de carte ne contient pas les données que vous allez cartographier. Pour cela, il faut charger le fichier Excel du TD2 sur le niveau de vie des pays du Monde
+- Cliquez sur *Ouvrir*
+- Chargez le fichier **hdi-edu.csv**. Évitez de prendre le fichier XLSX, Magrit reconnaît mal les fichiers Excel.
+- **Cliquez**  sur *Importer les 2 jeux de données*
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_fonddata.png" width="80%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : fond et données
+
+Vous devriez voir votre fond de carte et **monde_iso3** et **hdi-edu** dans *Gestion des couches*
+
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_maindata.png" width="100%" /&gt;
+]
+
+Cependant, Magrit ne fait pas encore le lien entre les deux. Pour cela, il faut faire une **jointure** entre le fond de carte et les données.
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : jointure
+.font80[
+En base de données, une jointure permet de lier le contenu d'au moins deux tables. Ici un fond de carte (une table avec des informations vectorielles) et un tableau.
+
+Cliquez sur le symbole de jointure à côté de **hdi-edu** dans *Gestion des couches*. Pour faire la jointure, il faut des champs avec des données communes aux deux tables. Dans notre cas, le champ ISO_A3 présent sur le fond de carte et les données. Confirmez la jointure
+]
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_jointure.png" width="70%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : carte choroplèthe
+
+Vous allez maintenant créer une carte choroplèthe.
+- Cliquez sur la cible à côté de la couche monde_iso3.
+- Dans la nouvelle fenêtre, choisissez *Choroplèthe*.
+- Dans variable, choisissez **taux_fertilite**
+- Enfin, dans Discrétisation, cliquez sur la discrétisation manuelle &lt;i class="fa-solid fa-gear"&gt;&lt;/i&gt;
+
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_chorovar.png" width="70%" /&gt;
+]
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : discrétisation
+
+.pull-left[Dans la nouvelle fenêtre, des informations sur la distribution s'affichent.
+
+L'objectif de notre carte sera de découvrir la répartition spatiale de l'espérance de vie dans les pays du Monde.
+
+Choisissez la méthode qui vous paraît la plus pertinente en fonction du contexte et de la distribution statistique.
+
+**Justifiez votre choix par écrit**
+
+**Confirmer** puis **Créer la couche**
+]
+
+.pull-right[.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_discret.png" width="100%" /&gt;
+]]
+
+Utilisez les éléments de l'onglet *Mise en page et éléments d'habillage* pour faire la mise en page de votre carte. Elle sera corrigé avec l'enseignant.
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Fin du TD3
+
+Magrit est un outil de cartographie très puissant et relativement simple à utiliser. Il est à privilégier pour produire vos cartes. Cependant, pour un meilleur rendu, il faut souvent exporter la carte et l'améliorer dans Inkscape ou Illustrator.
+
+Dans ce TD, vous avez appris :
+- A charger des données dans Magrit
+- A faire une jointure
+- A créer une carte choroplèthe dans Magrit
+- A la discrétiser
+- A la mettre en page 
+
+Dans le prochain cours, nous verrons ensemble comment mesurer les liens entre deux données quantitatives.
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="assets/libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

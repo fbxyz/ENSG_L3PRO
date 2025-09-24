@@ -1,0 +1,120 @@
+---
+title: "L3_Cours 1_stat"
+author: "Florian Bayer"
+output:
+  xaringan::moon_reader:
+    lib_dir: assets
+    chakra: assets/libs/remark-latest.min.js
+    css: [
+    "./assets/css/theme_flo.css",
+    "./assets/css/mtheme.css",
+    "./assets/css/fonts_mtheme.css",
+    "./assets/css/animate.css",
+    "./assets/css/tools.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    seal: false
+
+---
+```{r setup, global_options,include=FALSE}
+knitr::opts_chunk$set(
+  dpi = 200,
+  strip.white = T,
+  message = FALSE,
+  comment = NA,
+  echo = FALSE,
+  warning = FALSE,
+  eval = TRUE
+  
+)
+```
+
+```{r include=FALSE}
+source('./assets/functions.R')
+
+requiredPackages = c('knitr','png','grid','gridExtra',
+                     'RColorBrewer','dotenv')
+
+PackageFacile(requiredPackages)
+
+load_dot_env(".env")
+annee = Sys.getenv("annee")
+
+```
+
+
+
+class: center, middle, inverse, title-slide, animated, fadeIn
+# Analyse des données Licence Pro `r annee`
+# TD n°1- Les données en statistique<br /> <br />
+### Florian Bayer
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+
+---
+class: animated, fadeIn
+## Organisation des TD
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+
+Pour l'ensemble de ce cours, les TD porteront sur un même jeu de données détaillant le niveau de vie dans les pays du Monde
+
+Vous apprendrez à manipuler :
+- un logiciel d'analyse de données Open Source : **Orange3**
+- un logiciel de cartographie: **Magrit**
+
+Les TD reprendrons le contenu des cours :
+1. Les données statistiques
+2. L'analyse univariée
+3. La corrélation
+4. La régression linéaire ?
+
+---
+class: animated, fadeIn
+## Objectif du TD 1
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+
+Les objectifs de ce TD sont de mettre en application les acquis du cours 1 
+- caractérisation du type de données
+- et des tableaux
+
+Nous verrons également quelques fonctionnalités Excel.
+
+---
+class: animated, fadeIn
+## Consignes TD 1
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+
+Ouvrez et observez le contenu du fichier Excel **hdi-edu.xlsx**: il contient un onglet Data et un onglet Meta.
+
+En informatique, on évite de donner des noms trop longs aux variables. Les métadonnées permettent de mieux comprendre les informations relatives à
+chaque variable. 
+
+Parcourez la liste des données dans l’onglet META afin de vous approprier les thématiques présentes.
+
+1. Dans l’onglet DATA, de quel type de tableau s'agit-il ?
+2. De quel type sont les variables suivantes (détaillez le plus précisément possible en justifiant vos choix) :
+- code
+- transition_demo
+- esperance_vie
+
+---
+class: animated, fadeIn
+## Consignes TD 1
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+
+Excel permet de manipuler les données pour :
+- Faire des statistiques
+- Des graphiques
+
+A l'aide d'outils simples ou plus complexes.
+
+Essayez de calculer et de représenter graphiquement les moyennes d'espérance de vie par sous régions du monde.
+
+Vous pouvez utiliser des fonctions ou le tableau croisé dynamique.
+
+Si vous ne maitrisez pas Excel, cette partie sera faite avec l'enseignant.

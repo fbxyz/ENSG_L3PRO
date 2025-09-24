@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>L3_Cours 1_stat</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Florian Bayer" />
+    <script src="assets/header-attrs-2.29/header-attrs.js"></script>
+    <script src="assets/kePrint-0.0.1/kePrint.js"></script>
+    <link href="assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/theme_flo.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/mtheme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/fonts_mtheme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/tools.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+class: center, middle, inverse, title-slide, animated, fadeIn
+# Analyse des données Licence Pro 2025-2026
+# Cours n°1- Les données en statistique&lt;br /&gt; &lt;br /&gt;
+### Florian Bayer
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Objectifs du cours
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+
+Savoir caractériser et organiser les données est une étape essentielle de toute étude scientifique. Outre la méthode de représentation graphique, le type de données est très important en statistique : 
+
+les **méthodes** ne seront pas les mêmes pour 
+- **caractériser** le prénom le plus fréquemment données en 2019 
+- ou pour déterminer l'âge moyen de la population française. 
+
+
+Les objectifs de ce cours sont donc :
+
+- de réviser le **vocabulaire** portant sur les données en cartographie et en statistique
+- d'apprendre à **reconnaître** les différents types de données et de tableaux
+
+---
+class: animated, fadeIn
+## L’information géographique
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+Le géographe a pour particularité de s’intéresser aux **lieux** auxquels sont rattachés les données.
+- Une information non localisable a donc peu d’intérêt pour le géographe
+
+Le cartographe utilise donc de l’**information géographique**, c’est-à-dire localisable dans l’espace : 
+- Par des coordonnées 
+- Par une appartenance à un lieu, à un maillage	
+
+Ces appartenances ont un intérêt si elles peuvent être **caractériser** :
+- À une commune peut être associée sa population totale ou sa densité 
+
+Si la collecte de l’information géographique peut parfois être laborieuse, son analyse peut se faire avec les mêmes outils qu’en statistique. 
+
+
+---
+class: animated, fadeIn
+## Les données en cartographie
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+Les données utilisées en cartographie et statistique proviennent de multiples sources (*recensement, sondage,images satellites etc.*) et peuvent être **caractérisées** (première partie du cours) :
+
+.center-img[.pull-left[
+Données qualitatives
+&lt;img src="./assets/images/2-Stat/Quali.png" width="90%" /&gt;
+]
+
+.pull-right[
+Données quantitatives
+&lt;img src="./assets/images/2-Stat/Quanti.png" width="70%" /&gt;
+]]
+
+---
+class: animated, fadeIn
+## Les données en cartographie
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+Les données peuvent être récupérées sous forme de tableaux (*i.e. INSEE*), ou bien issues de différentes sources (livres, articles, pixels).
+
+Il est nécessaire de **restructurer** ces données, le plus souvent sous la forme d'un nouveau tableau. Les différents types de tableaux seront abordés dans la seconde partie du cours.
+
+---
+class: inverse, center, middle, animated, fadeIn  
+# 1- Les données en cartographie
+
+&lt;div class="my-footer-title "&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Rappels de vocabulaire : statistique
+
+Avant de définir les grands types de données, il est nécessaire de rappeler le vocabulaire commun aux données
+
+
+**La statistique** : 
+l'ensemble de techniques et d'outils mathématiques permettant d'analyser des données
+
+.pull-left3[.font80[« L’objet de la méthode statistique est la réduction des données. Une masse de données doit être remplacée par un petit nombre de quantités représentant correctement cette masse, et contenant autant que possible la totalité de l’information pertinente contenue dans les données d’origine. »  - Sir Ronald Aymler Fisher]]
+
+.pull-right1[
+&lt;img src="./assets/images/2-Stat/Fisher.jpg" width="70%" /&gt;
+]
+
+&lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt;
+
+&lt;b&gt;Les statistiques&lt;/b&gt; : 
+les données textes ou chiffres (alphanumériques) décrivant une population, un ensemble
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Rappels de vocabulaire : population
+
+La **population** ou **l’ensemble** :
+- La collection (l’ensemble) des données qui vont servir à créer votre carte.
+- En géographie cet ensemble est très rarement infini
+- On parlera souvent de série statistique pour les données quantitatives
+___
+.center-img[
+.pull-left[
+Ensemble des unités statistiques étudiées : les pays européens
+&lt;img src="./assets/images/2-Stat/Europe.png" width="100%" /&gt;
+]
+
+.pull-right[
+Mais la population peut aussi correspondre à des personnes : 
+&lt;img src="./assets/images/2-Stat/Solvay_conference_1927.jpg" width="100%" /&gt;
+]]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Rappels de vocabulaire : élément
+
+L'**élément** ou l’individu
+- Un objet constitutif de l'ensemble
+___
+.center-img[
+
+.pull-left[
+La Belgique est un élément de l'ensemble des pays europééns
+&lt;table class="table table-striped table-hover table-condensed table-responsive" style=""&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; iso_a3 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Nom &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Continent &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ALB &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Albania &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Europe &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; AUT &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Austria &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Europe &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 255) !important;"&gt; BLR &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 255) !important;"&gt; Belarus &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 255) !important;"&gt; Europe &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BEL &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Belgium &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Europe &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BIH &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Bosnia and Herz. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Europe &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+Marie Curie est un individu de l'ensemble des participants du Congrès de Solvay
+&lt;img src="./assets/images/2-Stat/Marie_Curie_c1920.jpg" width="50%" /&gt;
+]]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Rappels de vocabulaire : caractère
+
+Le **caractère**
+- Les éléments d’un ensemble sont décrits par un caractère.
+___
+.center-img[
+.pull-left[
+Chaque pays peut-être caractérisé par son code, son nom, sa superficie, sa population
+&lt;table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 10px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; iso_a3 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Nom &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Continent &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Superficie &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Population &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+De même que des personnes (Nom, prénom, age, sexe, adresse etc.)
+&lt;table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 10px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Nom &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Prénom &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Sexe &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Adresse &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+
+---
+class: animated, fadeIn
+## Rappels de vocabulaire : modalité / valeur
+
+La **modalité**, la **valeur**
+- La valeur descriptive du caractère
+  * modalité pour les données qualitatives
+  * valeur pour les données quantitatives
+
+___
+.center-img[
+.pull-left[
+La valeur de la population Belge est de 10,4 millions d'habitants. La modalité de son code iso est BEL
+&lt;table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 10px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; iso_a3 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Nom &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Continent &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Superficie &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Population &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; BEL &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Belgium &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Europe &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30561.53 [km^2] &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11484055 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+Marie Curie est une femme née en 1867. Elle a résidé au 36 quai de Béthune, 75004 Paris.
+&lt;table class="table table-striped table-hover table-condensed table-responsive" style="font-size: 10px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Nom &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Prénom &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Sexe &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; adresse &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Curie &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Marie &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 36 quai de Béthune, 75004 Paris &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]]
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Données quantitatives et qualitatives
+On peut caractériser les données en deux grands types, eux-mêmes disposant de sous-caractéristiques. 
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+.pull-left[
+Les données **qualitatives** :
+caractérise la nature de ce qui est décrit et non la quantité. 
+- Un nom
+- Une couleur
+- Le type de sol
+]
+
+--
+
+.pull-right[
+Les données  **quantitatives** :
+Caractérise une quantité, par définition mesurable
+- Une population 
+- Un taux de chômage
+- Une densité
+- L'IDH
+]
+
+---
+class: animated, fadeIn
+## Quantitatives et qualitatives ?
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+Il est important de pouvoir justifier le type de données :
+
+.pull-left[
+- Si la moyenne est impossible ou absurde : qualitatif (code départementaux, numéro de téléphone)
+- Si la moyenne a un sens : quantitatif (population, température)
+]
+
+--
+
+.center-img[
+.pull-right[
+&lt;img src="https://i.imgur.com/E5PQNoK.png" width="100%" /&gt;
+]]
+
+---
+class: animated, fadeIn
+## Les sous types de données qualitatives
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+Les données qualitatives peuvent avoir d'autres propriétés, importantes en cartographie et en statistique
+
+.pull-left[
+Qualitatif **nominal** : contient une notion de différence, aucun ordre
+- Codes départementaux
+- Des prénoms
+- Des numéros étudiants
+*v.s.*
+
+Qualitatif **ordinal**: contient une notion d'ordre sans être mesurable
+- Une classification : grand &gt; moyen &gt; petit
+]
+
+--
+
+.pull-right[
+Qualitatif **discret** : il y a moins de modalités que d'éléments. 
+- Le statut des hôpitaux : CHU, CHR, CH (3 statuts, 6 000 hôpitaux)
+- Le statut des communes : Capitale, préfecture, sous préfecture
+
+*v.s.*
+
+Qualitatif **exhaustif** : il y a autant de modalités que d'éléments
+- Le nom des pays, des régions
+- Un code
+]
+
+---
+class: animated, fadeIn
+## Les sous types de données quantitatives
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+Les données **quantitatives** peuvent aussi avoir d'autres propriétés, toutes aussi importantes en cartographie et en statistique
+
+.pull-left[
+Quantitatif de **stock** : une quantité brute, un effectif. 
+- La population
+- Une production en tonne
+
+*v.s*
+
+Quantitatif de **taux** : un rapport, un indice. 
+- La densité de population
+- Le taux de chômage
+- L'IDH
+]
+
+---
+class: animated, fadeIn
+## Stock ou taux ?
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+.pull-left[
+Comment faire la différence entre stock et taux ? 
+- Si la somme a une signification : stock (la somme de la population des pays du monde = la population mondiale)
+- Si la somme n'a pas de sens : taux (la somme du taux de chômage des pays du monde ne correspond pas au taux de chômage mondial)
+
+Attention, ce n’est pas parce que la valeur contient une virgule qu’il s’agit d’une données de taux :
+- la France à une population de 66,6 millions d’habitants en 2016
+]
+
+--
+
+.center-img[
+.pull-right[
+&lt;img src="https://i.imgur.com/feMB7iW.png" width="100%" /&gt;
+]]
+
+
+---
+class: animated, fadeIn
+## Les sous types de données quantitatives
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+.pull-left[
+Quantitatif **repérable** : le zéro est conventionnel
+- L'altitude
+
+*v.s.*
+
+Quantitatif **mesurable**: le zéro signifie l'absence concrète
+- Le taux de chômage
+- La population
+]
+
+--
+
+.pull-right[
+Quantitatif **discret** : une variable discrète a un nombre fini ou dénombrable (qu’on peut compter) de valeurs possibles. Elles sont distinctes et séparées, aucune valeur intermédiaire n’est possible : 
+- Le nombre d’étudiants dans cette salle de cours à ce moment de la journée
+- Les pointures de chaussures
+
+*v.s.*
+
+Quantitatif **continu**: il y a un nombre illimité de valeurs (non dénombrables). Entre deux valeurs distinctes, il y a toujours une valeur intermédiaire possible : 
+- Le taux de chômage 
+- La vitesse du vent
+]
+
+On peut transformer une donnée continue en donnée discrète en classant les valeurs dans des classes `\(\Rightarrow\)` discrétisation
+
+---
+class: animated, fadeIn
+## En résumé
+
+.zoom[ .center-img[
+&lt;img src="./assets/images/2-Stat/Caractere.png" width="90%" /&gt;
+]]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: inverse, center, middle, animated, fadeIn  
+#2- Les différents types de tableaux
+
+&lt;div class="my-footer-title "&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Rappels
+
+Il existe de nombreux type de tableaux en statistique. Leur forme peut dépendre entre autre:
+- Du type de données en amont (comment ont-elles été recueillies ?)
+- De la manière dont vous souhaitez analyser vos données (regroupements ?)
+- La manière de mettre en forme les tableaux et les variables est un métier à part dans l’entreprise (data manager)
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Tableau élémentaire de données
+
+.pull-left[
+C'est le cas le plus courant. Il décrit un ensemble d’éléments (lignes du tableau) à l’aide d’un ensemble de caractères (colonnes du tableau).
+- La première colonne est généralement réservée à un caractère servant d’identifiant. 
+- On note *i* un élément quelconque du tableau et *Xi* la " modalité prise par l’élément *i* pour le caractère *X*. "
+- En géographie on parlera de **tableau d'information géographique**
+]
+
+.pull-right[
+&lt;table class="table table-striped table-hover table-responsive" style="font-size: 15px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Etudiant &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; groupe &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; UFR &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; G &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Tableau de contingence
+
+C'est un cas particulier de tableau élémentaire :
+- les lignes et les colonnes jouent un rôle symétrique 
+- le contenu des cases correspond à des effectifs qui peuvent être sommés en ligne et en colonne.
+- On peut parfois calculer des moyennes ou tout autre indicateur statistique si les données le permettent
+
+Tout tableau de contingence est le résultat de la transformation d’un tableau élémentaire constitués de deux caractères discrets X et Y décrivant le même ensemble E
+
+Le nombre de ligne d’un tableau de contingence (k) correspond au nombre de modalités du premier caractère discret (X) et le nombre de colonnes (p) correspond au nombre de modalités du second caractère discret (Y)
+
+L’effectif d’une case, noté Nij, correspond au " nombre d’éléments du tableau élémentaire E qui prennent simultanément la modalité i de X et la modalité j de Y ".
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Tableau de contingence
+
+.pull-left[
+Tableau élémentaire de données
+&lt;table class="table table-striped table-hover table-responsive" style="font-size: 15px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Etudiant &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; groupe &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; UFR &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; G &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+Transformé en tableau de contingence
+&lt;table class="table table-striped table-hover table-responsive" style="font-size: 15px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; UFR.x.Grp &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; GEO &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; HIST &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Total &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn
+## Tableau disjonctif complet
+
+C'est le résultat de l'éclatement d'un tableau élémentaire contenant des modalités
+- Les variables sont codées en 0 ou 1 pour l'absence/présence d'un caractère
+- On l'utilise pour certaines analyses spécifiques (analyses factorielles)
+- Ils sont de retour en grâce avec le machine learning
+
+
+
+.pull-left[
+Tableau élémentaire de données
+&lt;table class="table table-striped table-hover table-responsive" style="font-size: 15px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Etudiant &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; groupe &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; UFR &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; G &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+Transformé en tableau disjonctif complet
+&lt;table class="table table-striped table-hover table-responsive" style="font-size: 15px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; groupe.1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; groupe.2 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; groupe.3 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; UFR.GEO &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; UFR.HIST &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; G &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+
+---
+class: animated, fadeIn
+## Tableau d’échanges
+
+On parle aussi de matrice de flux
+- Il contient des individus géographiques en ligne et en colonne, qui peuvent ou non être identiques
+- Un tableau ne peut représenter qu'un seul caractère, par exemple les flux de population entre les individus
+- Si le tableau d'échanges n'est pas symétrique, il se lit de la ligne vers la colonne
+
+&lt;table class="table table-striped table-hover table-responsive" style="font-size: 15px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Aéroports &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Paris &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Berlin &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Londres &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paris &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Berlin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Londres &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+
+---
+class: inverse, center, middle, animated, fadeIn  
+# Conclusion
+
+&lt;div class="my-footer-title "&gt;&lt;/div&gt; 
+
+---
+class: animated, fadeIn 
+## Concepts-clés 
+
+Les géographes utilisent de **l'information géographique**, localisable dans l'espace.
+- Il existe un vocabulaire propre aux données statistiques, qu'il est nécessaire de connaître.
+- Les données peuvent être regroupées selon plusieurs **propriétés**
+- Qu'il faut maîtriser, car les règles de la sémiologie graphique et les outils statistiques en **dépendent** !   
+
+Plusieurs types de tableaux existent et il est nécessaire de les reconnaître
+- Les tableaux élémentaires de données sont les plus courants, avec en ligne les individus et en colonnes leurs caractères
+- Les tableaux de contingence permettent de croiser des caractères
+- Les tableaux d'échanges sont très appréciées des géographes
+
+&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="assets/libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
