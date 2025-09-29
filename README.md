@@ -76,3 +76,16 @@ Aucun prérequis particulier n'est nécessaire, le cours est conçu pour les dé
 
 Le cours alterne entre des séances théoriques et des séances pratiques sous forme de TD afin de favoriser une approche concrète et appliquée.
 
+
+## Bibliographie
+
+### Statistique en géographie :
+- Béguin, M., & Pumain, D. (2017). La représentation des données géographiques-4e éd.: Statistique et cartographie. Armand Colin.
+- Lambert, N., & Zanin, C. (2016). Manuel de cartographie: principes, méthodes, applications. Armand Colin.
+- Dumolard, P., Dubus, N., & Charleux, L. L. (2003). Les statistiques en géographie (p. 240). Editions Belin.
+
+### Statistique :
+- Saporta, G. (2006). Probabilités, analyse des données et statistique. Editions technip.
+- Sanders, L. (1990). L’analyse des données appliquées à la géographie, GIP RECLUS.
+- Bouyer, J. (2009). Épidémiologie: principes et méthodes quantitatives. Lavoisier.
+

@@ -56,6 +56,20 @@ class: center, middle, inverse, title-slide, animated, fadeIn
 
 ---
 class: animated, fadeIn
+## Organisation du TD 3 - Groupes de travail
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Première partie** : Découverte individuelle de Magrit et création d'une première carte.
+
+**Deuxième partie** : Travail en groupe sur l'impact des méthodes de discrétisation avec **présentation PowerPoint** de 5 minutes par groupe.
+
+**Objectifs pédagogiques** :
+- Maîtriser les outils de cartographie numérique (Magrit)
+- Comprendre l'impact des choix de discrétisation sur le message cartographique
+- Développer l'argumentation scientifique et la présentation orale
+
+---
+class: animated, fadeIn
 ## Objectif du TD 3
 <div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
@@ -207,6 +221,92 @@ Utilisez les éléments de l'onglet *Mise en page et éléments d'habillage* pou
 
 
 <div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+
+---
+class: inverse, center, middle, animated, fadeIn
+# 2- Exercice comparatif en groupes
+
+<img src="./assets/css/graticules.png" STYLE="position:absolute; BOTTOM:30px; RIGHT:0px; WIDTH:150%;"/>
+<div class="my-footer-title "></div>
+
+---
+class: animated, fadeIn
+## Mise en situation professionnelle
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Commanditaire** : Organisation Mondiale de la Santé (OMS) 
+
+**Contexte** : Préparation du rapport annuel "Inégalités de santé dans le monde"
+
+**Demande** : Produire une cartographie de l'espérance de vie mondiale pour sensibiliser les décideurs politiques aux inégalités de santé.
+
+**Public cible** :
+- Ministres de la Santé européens
+
+**Votre mission** : En tant que bureau d'études en géomatique, vous devez conseiller l'OMS sur la meilleure méthode de discrétisation pour atteindre cet objectif de communication.
+
+
+---
+class: animated, fadeIn
+## Discrétisation : le choix cornélien !
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Objectif** : comprendre l'impact des différentes méthodes de discrétisation sur la représentation cartographique et le message transmis.
+
+Dans le cadre de la commande OMS, **chaque groupe** doit produire **une carte choroplèthe** de la variable **esperance_vie** avec une méthode différente.
+
+L'idée est de **comparer les résultats** pour conseiller au mieux l'OMS sur la méthode la plus adaptée à leur objectif de communication.
+
+Vos **6 groupes de 4** se répartiront les méthodes de discrétisation suivantes :
+
+- **Groupe 1** : Quantiles 
+- **Groupe 2** : Moyenne et écart-type 
+- **Groupe 3** : Q6 
+- **Groupe 4** : Amplitudes égales
+- **Groupe 5** : Seuils naturels 
+- **Groupe 6** : Seuils naturels 
+
+---
+class: animated, fadeIn
+## Rendu comparatif des groupes
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+Chaque groupe devra **présenter sa carte via PowerPoint** en 5 minutes et :
+
+**1. Présenter sa méthode de discrétisation** :
+- Expliquez le principe de la méthode
+- Justifiez vos choix
+
+**2. Défendre votre carte** :
+- Argumentez : pourquoi votre méthode est-elle pertinente pour l'espérance de vie ?
+- Quels pays sont mis en valeur ou "cachés" par votre discrétisation ?
+
+**3. Critique constructive** : Après chaque présentation, les autres groupes peuvent poser une question critique.
+
+**Support** : Préparez 2 à 4 slides PowerPoint 
+
+---
+class: animated, fadeIn
+## Débriefing : quelle méthode choisir ?
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Questions collectives** :
+- Quelle carte vous semble la plus "juste" ? Pourquoi ?
+- Y a-t-il des pays qui changent complètement de classe selon la méthode ?
+- Quelle méthode met le mieux en évidence les inégalités mondiales ?
+
+**Synthèse pédagogique** :
+- **Il n'y a pas de "bonne" discrétisation universelle** → tout dépend de l'objectif cartographique
+- **La forme de la distribution guide le choix** → une distribution normale suggère d'autres méthodes qu'une distribution asymétrique
+- **La discrétisation est un acte de communication** → elle oriente la lecture et l'interprétation
+- **Transparence méthodologique** → toujours justifier et mentionner sa méthode de discrétisation
+
+Cet exercice vous prépare à être des cartographes critiques et responsables !
 
 ---
 class: animated, fadeIn

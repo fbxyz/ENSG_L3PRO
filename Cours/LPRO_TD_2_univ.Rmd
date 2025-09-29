@@ -228,19 +228,93 @@ knitr::include_graphics("./assets/images/TD/TD2_orange_boxplot.png")
 
 ---
 class: animated, fadeIn
-## Fin du TD2
+## Orange : Analyse comparative
 
-Orange est surtout utilisé en bio informatique et machine learning, mais sa simplicité de prise en main en font un très bon outil pour débuter en statistique et analyse de données.
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
-Dans ce TD, vous avez appris :
-- A charger des données dans Orange
-- A réaliser des calculs simples de variables centrales et paramètres de dispersion
-- A créer des graphiques
-- A interpréter vos résultats
+**Consignes :**
 
-Comme vous l'avez remarqué, certaines de vos données varient fortement dans l'espace. La carte est alors le meilleur moyen de les représenter.
+1. **Formez des binômes**
+2. **Analysez la variable `esperance_vie`** avec Feature Statistics et Box Plot
 
-Dans le prochain cours, nous verrons ensemble comment bien cartographier ces résultats.
+**Étape 1 - Vue d'ensemble**  :
+- Analysez les **moyennes** et **écart-types** pour chaque continent (split)
+- Utilisez le **Box Plot** avec split par **Continent** pour comparer l'Afrique aux autres continents
+- Que révèle ces analyses ?
+
+**Étape 2 - Analyse par pays africains**  :
+- Maintenant et l'aide d'un nouveau flux, faites l'analyse pour les pays africains
+- Identifiez les pays avec les `esperance_vie` extrêmes (outliers + min/max)
+- Choisissez 2 pays opposés pour votre analyse. 
+
+---
+class: animated, fadeIn
+## Comprendre les outliers africains
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+À partir de votre analyse des pays africains, vous devez expliquer pourquoi certains pays ont des espérances de vie si différentes.
+
+**Étape 3 - Identifier les cas extrêmes** :
+- **Pays avec la plus haute espérance de vie** : _______________
+- **Pays avec la plus basse espérance de vie** : _______________
+- **Outliers détectés** (si il y en a) : _______________
+
+**Étape 4 - Formuler des hypothèses** :
+Avant de regarder les données, quelles pourraient être les raisons de ces différences ?
+- 1 _______________________________________________
+- 2 _______________________________________________
+- 3 _______________________________________________
+
+**Étape 3 - Tester vos hypothèses** :
+
+Explorez les autres variables (économiques, sociales, sanitaires) pour vos pays extrêmes. Utilisez l'onglet **Meta** pour comprendre les indicateurs.
+
+---
+class: animated, fadeIn
+## Restitution collective
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Tour de table** : Chaque binôme présente en 1 minute :
+- Leurs pays extrêmes choisis et leurs hypothèses principales
+- Une découverte surprenante dans les données
+
+**Questions de débriefing** :
+- Quelles variables explicatives reviennent le plus souvent ?
+- Y a-t-il des pays difficiles à expliquer avec vos hypothèses ?
+- Vos hypothèses initiales étaient-elles confirmées ou infirmées ?
+
+**Synthèse pédagogique** :
+- **Dispersion** : L'écart-type révèle des sous-groupes de pays avec des profils similaires
+- **Corrélation ≠ causalité** : Vous avez identifié des associations, mais attention aux explications simplistes
+- **Contextualisation** : Les chiffres racontent des histoires humaines et géographiques
+- **Démarche scientifique** : Hypothèse → Test → Interprétation critique
+- **Préparation bivariée** : Vous avez intuitivement cherché des corrélations, nous allons maintenant les mesurer !
+
+---
+class: animated, fadeIn
+## Dans ce TD, vous avez appris à
+
+.pull-left[
+**Compétences techniques :**
+- Charger et manipuler des données dans Orange
+- Calculer et interpréter les mesures de tendance centrale (moyenne, médiane)
+- Calculer et interpréter les mesures de dispersion (écart-type, coefficient de variation)
+- Créer et analyser différents types de graphiques (histogrammes, box plots)
+- Comparer des distributions entre groupes (continents)
+]
+
+.pull-right[
+**Compétences analytiques :**
+- Formuler des hypothèses avant l'analyse des données
+- Identifier et expliquer les valeurs aberrantes (outliers)
+- Comprendre qu'une moyenne cache des disparités (importance de l'écart-type)
+- Contextualiser les résultats statistiques avec des connaissances géographiques
+- Passer de l'observation à l'explication causale
+]
+
+Cette démarche d'investigation vous a préparés à l'analyse bivariée : vous avez commencé à chercher des liens entre variables (espérance de vie ↔ revenus, éducation, santé...). Dans les prochains cours, nous formaliserons ces intuitions avec les techniques de corrélation et la cartographie statistique.
 
 <div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 

@@ -68,19 +68,21 @@ Vous apprendrez à manipuler :
 Les TD reprendrons le contenu des cours :
 1. Les données statistiques
 2. L'analyse univariée
-3. La corrélation
-4. La régression linéaire ?
+3. La discrétisation
+4. La corrélation
 
 ---
 class: animated, fadeIn
 ## Objectif du TD 1
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
-Les objectifs de ce TD sont de mettre en application les acquis du cours 1 
+Les objectifs de ce TD sont de mettre en application les acquis du cours 1
 - caractérisation du type de données
 - et des tableaux
 
 Nous verrons également quelques fonctionnalités Excel.
+
+**Organisation** : Vous travaillerez **en binômes** tout au long de ce TD.
 
 ---
 class: animated, fadeIn
@@ -103,18 +105,73 @@ Parcourez la liste des données dans l’onglet META afin de vous approprier les
 
 ---
 class: animated, fadeIn
-## Consignes TD 1
+## Exploration des données
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
-Excel permet de manipuler les données pour :
-- Faire des statistiques
-- Des graphiques
+**Étape 1 - Tri et observation** (10 min) :
+- **Triez** les pays par espérance de vie (ordre décroissant)
+- Identifiez les 5 pays avec la plus longue espérance de vie
+- Identifiez les 5 pays avec la plus courte espérance de vie
+- **Filtrez** les données pour ne voir que les pays d'Afrique
 
-A l'aide d'outils simples ou plus complexes.
+**Étape 2 - Analyse comparative** (10 min) :
+- Choisissez 2 pays que vous connaissez et comparez leurs indicateurs principaux
+- Notez 3 différences marquantes entre ces deux pays
 
-Essayez de calculer et de représenter graphiquement les moyennes d'espérance de vie par sous régions du monde.
 
-Vous pouvez utiliser des fonctions ou le tableau croisé dynamique.
+---
+class: animated, fadeIn
+## Graphiques avec Excel - Étape 1
 
-Si vous ne maitrisez pas Excel, cette partie sera faite avec l'enseignant.
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Objectif** : Visualiser la distribution de l'espérance de vie mondiale
+
+**Consignes** :
+- Sélectionnez la colonne **esperance_vie** (tous les pays)
+- Créez un **histogramme** pour observer la distribution des valeurs
+- Analysez la forme de la distribution : est-elle symétrique ? Y a-t-il des pics ?
+- **Interprétez** : que révèle cette distribution sur les inégalités mondiales de santé ?
+
+**Aide** : Insertion > Graphiques > Histogramme 
+
+---
+class: animated, fadeIn
+## Calculs statistiques avec Excel - Étape 2
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Objectif** : Calculer et comparer les statistiques par sous-régions du monde
+
+**Consignes** :
+- Calculez la **moyenne**, le **minimum** et le **maximum** d'espérance de vie par sous-région
+- Créez un **diagramme en bâtons** (graphique en barres) des moyennes par sous-région
+- Identifiez quelle sous-région a les plus grandes disparités internes
+
+**Aide pour les calculs** :
+- **Étape 1** : Créez un tableau croisé dynamique (Insertion > Tableau croisé dynamique)
+  - **Lignes** : sous_region
+  - **Valeurs** : esperance_vie (configurez pour afficher moyenne, min, max)
+- **Étape 2** : Copiez les résultats du tableau croisé dynamique
+  - Sélectionnez les moyennes par sous-région et copiez les **valeurs** dans une nouvelle feuille de votre classeur
+- **Étape 3** : Créez un diagramme en bâtons à partir de ces valeurs copiées
+  - Sélectionnez vos données copiées > Insertion > Graphiques > Histogramme/Barres
+
+
+---
+class: animated, fadeIn
+## Synthèse des observations
+
+<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Restitution rapide** (5 min) :
+
+Chaque binôme partage :
+- **Un constat marquant** issu de vos analyses
+- **Une hypothèse** pour expliquer une différence observée entre pays ou régions
+- **Une limite** identifiée dans ce jeu de données
+
+**Préparation aux TD suivants** :
+- Ces premières observations vous serviront de base pour l'analyse statistique approfondie (TD2)
+- La variable espérance de vie sera réutilisée pour les exercices de cartographie (TD3)
