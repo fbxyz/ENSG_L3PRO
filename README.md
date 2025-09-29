@@ -67,9 +67,6 @@ conda install orange3 -y
 
 - Accédez à Magrit ici : [Magrit](https://magrit.cnrs.fr/)
 
-## Public visé
-
-Ce cours s'adresse aux étudiants de Licence Professionnelle 1ère année débutants dans les domaines des statistiques et de la cartographie.
 
 ## Prérequis
 
