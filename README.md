@@ -47,6 +47,7 @@ Ce cours est destiné aux étudiants de l'ENSG, Licence Professionnelle, débuta
 A télécharger (download raw file)
   - [data Excel](https://github.com/fbxyz/ENSG_L3PRO/blob/master/Cours/data/hdi-edu.xlsx)
   - [data CSV](https://github.com/fbxyz/ENSG_L3PRO/blob/master/Cours/data/hdi-edu.csv)
+  - [fond de carte](https://raw.githubusercontent.com/fbxyz/ENSG_L3PRO/refs/heads/main/Cours/data/monde_iso3.geojson)
     
 ### Orange Data Mining
 
