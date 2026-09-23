@@ -7,9 +7,7 @@ output:
     lib_dir: assets
     chakra: assets/libs/remark-latest.min.js
     css: [
-    "./assets/css/theme_flo.css",
-    "./assets/css/mtheme.css",
-    "./assets/css/fonts_mtheme.css",
+    "./assets/css/geodata.css",
     "./assets/css/animate.css",
     "./assets/css/tools.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"]
@@ -59,7 +57,7 @@ class: center, middle, inverse, title-slide, animated, fadeIn
 ### Florian Bayer
 
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -69,14 +67,15 @@ class: animated, fadeIn
 - CM puis TD
 - florian.bayer@gmail.com
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
 ##  Contenu de l’enseignement
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 - **Acquérir les bonnes pratiques de la démarche scientifique** : Introduction aux méthodes rigoureuses de recherche et d'analyse scientifique.
 - **Les statistiques appliquées à la cartographie** : Compréhension des concepts statistiques et de leur utilisation pour l'analyse et la représentation géographique des données.
+- **La sémiologie graphique** : Les règles du langage cartographique pour choisir la représentation adaptée à chaque type de données.
 - **Principes et méthodes de traitement en analyse de données** : Initiation aux bases de l'analyse de données et l'interprétation des résultats. La collecte des données n'est pas abordée.
 - **Analyse univariée et bivariée** sur des données quantitatives : Exploration des techniques d'analyse de variables uniques et des relations entre deux variables (corrélation).
 - **Méthodes de discrétisation** : Techniques de regroupement des données en classes pour une meilleure interprétation visuelle.
@@ -87,7 +86,6 @@ class: animated, fadeIn
 ---
 class: inverse, center, middle, animated, fadeIn
 # Contenu de l'enseignement
-<img src="./assets/css/graticules.png" STYLE="position:absolute; BOTTOM:24px; RIGHT:0px; WIDTH:150%;"/>
 <div class="my-footer-title "></div> 
 
 ---
@@ -106,7 +104,23 @@ knitr::include_graphics("./assets/images/1_Intro/distrib.png")
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+
+---
+class: animated, fadeIn
+## Sémiologie graphique
+
+- Connaître les **règles de la sémiologie graphique** : implantation, figuration et **variables visuelles**.
+- Choisir la représentation adaptée au **type de données** : différence, ordre ou proportionnalité.
+- Réaliser et **mettre en page** des cartes avec Magrit.
+
+.center-img[
+```{r echo=FALSE, out.width="55%"}
+knitr::include_graphics("./assets/images/3-Semio/variables_ex.png")
+```
+]
+
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 ---
 class: animated, fadeIn
@@ -121,7 +135,7 @@ knitr::include_graphics("./assets/images/1_Intro/discret.png")
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 
 ---
@@ -136,7 +150,7 @@ class: animated, fadeIn
 knitr::include_graphics("./assets/images/1_Intro/corr_dumb.jpg")
 ```
 ]
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -152,7 +166,7 @@ knitr::include_graphics("./assets/images/1_Intro/stat1.png")
 
 </div>
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -164,7 +178,7 @@ knitr::include_graphics("./assets/images/1_Intro/stat2.png")
 ```
 ] 
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -177,7 +191,7 @@ knitr::include_graphics("./assets/images/1_Intro/stat3.png")
 ```
 ] 
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -189,6 +203,6 @@ knitr::include_graphics("./assets/images/1_Intro/bretagne_acp.png")
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 

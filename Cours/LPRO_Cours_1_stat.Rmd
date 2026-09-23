@@ -6,9 +6,7 @@ output:
     lib_dir: assets
     chakra: assets/libs/remark-latest.min.js
     css: [
-    "./assets/css/theme_flo.css",
-    "./assets/css/mtheme.css",
-    "./assets/css/fonts_mtheme.css",
+    "./assets/css/geodata.css",
     "./assets/css/animate.css",
     "./assets/css/tools.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"]
@@ -52,12 +50,12 @@ class: center, middle, inverse, title-slide, animated, fadeIn
 # Cours n°1- Les données en statistique<br /> <br />
 ### Florian Bayer
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
 ## Objectifs du cours
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 
 Savoir caractériser et organiser les données est une étape essentielle de toute étude scientifique. Outre la méthode de représentation graphique, le type de données est très important en statistique : 
@@ -75,7 +73,7 @@ Les objectifs de ce cours sont donc :
 ---
 class: animated, fadeIn
 ## L’information géographique
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Le géographe a pour particularité de s’intéresser aux **lieux** auxquels sont rattachés les données.
 - Une information non localisable a donc peu d’intérêt pour le géographe
@@ -94,7 +92,7 @@ Si la collecte de l’information géographique peut parfois être laborieuse, s
 class: animated, fadeIn
 ## Les données en cartographie
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Les données utilisées en cartographie et statistique proviennent de multiples sources (*recensement, sondage,images satellites etc.*) et peuvent être **caractérisées** (première partie du cours) :
 
@@ -116,7 +114,7 @@ knitr::include_graphics("./assets/images/2-Stat/Quanti.png")
 class: animated, fadeIn
 ## Les données en cartographie
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Les données peuvent être récupérées sous forme de tableaux (*i.e. INSEE*), ou bien issues de différentes sources (livres, articles, pixels).
 
@@ -152,7 +150,7 @@ knitr::include_graphics("./assets/images/2-Stat/Fisher.jpg")
 les données textes ou chiffres (alphanumériques) décrivant une population, un ensemble
 
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -178,7 +176,7 @@ knitr::include_graphics("./assets/images/2-Stat/Solvay_conference_1927.jpg")
 ```
 ]]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -217,7 +215,7 @@ knitr::include_graphics("./assets/images/2-Stat/Marie_Curie_c1920.jpg")
 ```
 ]]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -250,7 +248,7 @@ kable(df, format = "html") %>%
 ```
 ]]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 
 ---
@@ -285,14 +283,14 @@ kable(df, format = "html") %>%
 ]]
 
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
 ## Données quantitatives et qualitatives
 On peut caractériser les données en deux grands types, eux-mêmes disposant de sous-caractéristiques. 
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 .pull-left[
 Les données **qualitatives** :
@@ -316,7 +314,7 @@ Caractérise une quantité, par définition mesurable
 ---
 class: animated, fadeIn
 ## Quantitatives et qualitatives ?
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Il est important de pouvoir justifier le type de données :
 
@@ -337,7 +335,7 @@ knitr::include_graphics("https://i.imgur.com/E5PQNoK.png")
 ---
 class: animated, fadeIn
 ## Les sous types de données qualitatives
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Les données qualitatives peuvent avoir d'autres propriétés, importantes en cartographie et en statistique
 
@@ -369,7 +367,7 @@ Qualitatif **exhaustif** : il y a autant de modalités que d'éléments
 ---
 class: animated, fadeIn
 ## Les sous types de données quantitatives
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Les données **quantitatives** peuvent aussi avoir d'autres propriétés, toutes aussi importantes en cartographie et en statistique
 
@@ -389,7 +387,7 @@ Quantitatif de **taux** : un rapport, un indice.
 ---
 class: animated, fadeIn
 ## Stock ou taux ?
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 .pull-left[
 Comment faire la différence entre stock et taux ? 
@@ -413,7 +411,7 @@ knitr::include_graphics("https://i.imgur.com/feMB7iW.png")
 ---
 class: animated, fadeIn
 ## Les sous types de données quantitatives
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 .pull-left[
 Quantitatif **repérable** : le zéro est conventionnel
@@ -452,7 +450,7 @@ knitr::include_graphics("./assets/images/2-Stat/Caractere.png")
 ```
 ]]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: inverse, center, middle, animated, fadeIn  
@@ -469,7 +467,7 @@ Il existe de nombreux type de tableaux en statistique. Leur forme peut dépendre
 - De la manière dont vous souhaitez analyser vos données (regroupements ?)
 - La manière de mettre en forme les tableaux et les variables est un métier à part dans l’entreprise (data manager)
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -507,7 +505,7 @@ data.frame(
 
 ```
 ]
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -524,7 +522,7 @@ Le nombre de ligne d’un tableau de contingence (k) correspond au nombre de mod
 
 L’effectif d’une case, noté Nij, correspond au " nombre d’éléments du tableau élémentaire E qui prennent simultanément la modalité i de X et la modalité j de Y ".
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -578,7 +576,7 @@ data.frame(
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -637,7 +635,7 @@ acm.disjonctif(subset(df, select = c("groupe", "UFR"))) %>%  kable(format = "htm
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 
 ---
@@ -667,7 +665,7 @@ data.frame(
 
 ```
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: inverse, center, middle, animated, fadeIn  
@@ -689,4 +687,4 @@ Plusieurs types de tableaux existent et il est nécessaire de les reconnaître
 - Les tableaux de contingence permettent de croiser des caractères
 - Les tableaux d'échanges sont très appréciées des géographes
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 

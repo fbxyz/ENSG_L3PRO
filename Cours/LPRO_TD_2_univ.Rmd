@@ -1,14 +1,12 @@
 ---
-title: "L3_Cours 1_stat"
+title: "L3_TD 2_univ"
 author: "Florian Bayer"
 output:
   xaringan::moon_reader:
     lib_dir: assets
     chakra: assets/libs/remark-latest.min.js
     css: [
-    "./assets/css/theme_flo.css",
-    "./assets/css/mtheme.css",
-    "./assets/css/fonts_mtheme.css",
+    "./assets/css/geodata.css",
     "./assets/css/animate.css",
     "./assets/css/tools.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"]
@@ -52,12 +50,12 @@ class: center, middle, inverse, title-slide, animated, fadeIn
 # TD n°2- L'analyse univariée<br /> <br />
 ### Florian Bayer
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
 ## Objectif du TD 2
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Les objectifs de ce TD sont de mettre en application les acquis du cours 2 sur l'analyse d'une série de données
 - avec des graphiques
@@ -70,7 +68,7 @@ Vous apprendrez à utiliser un outil d'analyse de données : Orange
 class: animated, fadeIn
 ## Orange : présentation
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Orange est un logiciel open source dédié à l'analyse de données, à l'exploration visuelle et à l'apprentissage automatique.
 
@@ -94,7 +92,7 @@ knitr::include_graphics("./assets/images/TD/TD2_orange_main.png")
 ] 
 
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -114,7 +112,7 @@ knitr::include_graphics("./assets/images/TD/TD2_orange_widgets.png")
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -135,7 +133,7 @@ knitr::include_graphics("./assets/images/TD/TD2_orange_data.png")
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -155,7 +153,7 @@ knitr::include_graphics("./assets/images/TD/TD2_orange_datatable.png")
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
@@ -179,7 +177,7 @@ Faites l'analyse univariée de la variable **esperance_vie**. Que pouvez-vous en
 
 
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 ---
 class: animated, fadeIn
@@ -201,7 +199,7 @@ knitr::include_graphics("./assets/images/TD/TD2_orange_histo.png")
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 ---
 class: animated, fadeIn
@@ -215,7 +213,7 @@ Analysez la distribution de **taux_fertilite**, puis faites un sous-groupe avec 
 
 Que pouvez-vous en conclure ? 
 
-**Pensez à sauvegarder votre projet Orange, nous le réutiliserons pour le TD4**
+**Pensez à sauvegarder votre projet Orange, nous le réutiliserons pour le TD 5**
 ]
 
 .pull-right[
@@ -224,13 +222,13 @@ knitr::include_graphics("./assets/images/TD/TD2_orange_boxplot.png")
 ```
 ]
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 ---
 class: animated, fadeIn
 ## Orange : Analyse comparative
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 **Consignes :**
 
@@ -251,7 +249,7 @@ class: animated, fadeIn
 class: animated, fadeIn
 ## Comprendre les outliers africains
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 À partir de votre analyse des pays africains, vous devez expliquer pourquoi certains pays ont des espérances de vie si différentes.
 
@@ -274,7 +272,7 @@ Explorez les autres variables (économiques, sociales, sanitaires) pour vos pays
 class: animated, fadeIn
 ## Restitution collective
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 **Tour de table** : Chaque binôme présente en 1 minute :
 - Leurs pays extrêmes choisis et leurs hypothèses principales
@@ -316,6 +314,6 @@ class: animated, fadeIn
 
 Cette démarche d'investigation vous a préparés à l'analyse bivariée : vous avez commencé à chercher des liens entre variables (espérance de vie ↔ revenus, éducation, santé...). Dans les prochains cours, nous formaliserons ces intuitions avec les techniques de corrélation et la cartographie statistique.
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 

@@ -1,14 +1,12 @@
 ---
-title: "L3_Cours 1_stat"
+title: "L3_TD 1_stat"
 author: "Florian Bayer"
 output:
   xaringan::moon_reader:
     lib_dir: assets
     chakra: assets/libs/remark-latest.min.js
     css: [
-    "./assets/css/theme_flo.css",
-    "./assets/css/mtheme.css",
-    "./assets/css/fonts_mtheme.css",
+    "./assets/css/geodata.css",
     "./assets/css/animate.css",
     "./assets/css/tools.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"]
@@ -52,12 +50,12 @@ class: center, middle, inverse, title-slide, animated, fadeIn
 # TD n°1- Les données en statistique<br /> <br />
 ### Florian Bayer
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 ---
 class: animated, fadeIn
 ## Organisation des TD
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Pour l'ensemble de ce cours, les TD porteront sur un même jeu de données détaillant le niveau de vie dans les pays du Monde
 
@@ -74,7 +72,7 @@ Les TD reprendrons le contenu des cours :
 ---
 class: animated, fadeIn
 ## Objectif du TD 1
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 Les objectifs de ce TD sont de mettre en application les acquis du cours 1
 - caractérisation du type de données
@@ -88,7 +86,7 @@ Nous verrons également quelques fonctionnalités Excel.
 class: animated, fadeIn
 ## Consignes TD 1
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div> 
 
 Ouvrez et observez le contenu du fichier Excel **hdi-edu.xlsx**: il contient un onglet Data et un onglet Meta.
 
@@ -107,7 +105,7 @@ Parcourez la liste des données dans l’onglet META afin de vous approprier les
 class: animated, fadeIn
 ## Exploration des données
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 **Étape 1 - Tri et observation** (10 min) :
 - **Triez** les pays par espérance de vie (ordre décroissant)
@@ -124,7 +122,7 @@ class: animated, fadeIn
 class: animated, fadeIn
 ## Graphiques avec Excel - Étape 1
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 **Objectif** : Visualiser la distribution de l'espérance de vie mondiale
 
@@ -140,7 +138,7 @@ class: animated, fadeIn
 class: animated, fadeIn
 ## Calculs statistiques avec Excel - Étape 2
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 **Objectif** : Calculer et comparer les statistiques par sous-régions du monde
 
@@ -163,7 +161,7 @@ class: animated, fadeIn
 class: animated, fadeIn
 ## Synthèse des observations
 
-<div class="my-footer"><span>ENSG - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
 **Restitution rapide** (5 min) :
 
@@ -174,4 +172,4 @@ Chaque binôme partage :
 
 **Préparation aux TD suivants** :
 - Ces premières observations vous serviront de base pour l'analyse statistique approfondie (TD2)
-- La variable espérance de vie sera réutilisée pour les exercices de cartographie (TD3)
+- La variable espérance de vie sera réutilisée pour les exercices de cartographie (TD 3 et 4)

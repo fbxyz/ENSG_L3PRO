@@ -4,12 +4,10 @@
     <title>L3_Cours 1_stat</title>
     <meta charset="utf-8" />
     <meta name="author" content="Florian Bayer" />
-    <script src="assets/header-attrs-2.29/header-attrs.js"></script>
+    <script src="assets/header-attrs-2.31/header-attrs.js"></script>
     <script src="assets/kePrint-0.0.1/kePrint.js"></script>
     <link href="assets/lightable-0.0.1/lightable.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/theme_flo.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/mtheme.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/fonts_mtheme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/geodata.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/tools.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" />
@@ -24,16 +22,16 @@
 
 
 class: center, middle, inverse, title-slide, animated, fadeIn
-# Analyse des données Licence Pro 2025-2026
+# Analyse des données Licence Pro 2026-2027
 # Cours n°1- Les données en statistique&lt;br /&gt; &lt;br /&gt;
 ### Florian Bayer
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
 ## Objectifs du cours
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 
 Savoir caractériser et organiser les données est une étape essentielle de toute étude scientifique. Outre la méthode de représentation graphique, le type de données est très important en statistique : 
@@ -51,7 +49,7 @@ Les objectifs de ce cours sont donc :
 ---
 class: animated, fadeIn
 ## L’information géographique
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 Le géographe a pour particularité de s’intéresser aux **lieux** auxquels sont rattachés les données.
 - Une information non localisable a donc peu d’intérêt pour le géographe
@@ -70,25 +68,25 @@ Si la collecte de l’information géographique peut parfois être laborieuse, s
 class: animated, fadeIn
 ## Les données en cartographie
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 Les données utilisées en cartographie et statistique proviennent de multiples sources (*recensement, sondage,images satellites etc.*) et peuvent être **caractérisées** (première partie du cours) :
 
 .center-img[.pull-left[
 Données qualitatives
-&lt;img src="./assets/images/2-Stat/Quali.png" width="90%" /&gt;
+&lt;img src="./assets/images/2-Stat/Quali.png" alt="" width="90%" /&gt;
 ]
 
 .pull-right[
 Données quantitatives
-&lt;img src="./assets/images/2-Stat/Quanti.png" width="70%" /&gt;
+&lt;img src="./assets/images/2-Stat/Quanti.png" alt="" width="70%" /&gt;
 ]]
 
 ---
 class: animated, fadeIn
 ## Les données en cartographie
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 Les données peuvent être récupérées sous forme de tableaux (*i.e. INSEE*), ou bien issues de différentes sources (livres, articles, pixels).
 
@@ -113,7 +111,7 @@ l'ensemble de techniques et d'outils mathématiques permettant d'analyser des do
 .pull-left3[.font80[« L’objet de la méthode statistique est la réduction des données. Une masse de données doit être remplacée par un petit nombre de quantités représentant correctement cette masse, et contenant autant que possible la totalité de l’information pertinente contenue dans les données d’origine. »  - Sir Ronald Aymler Fisher]]
 
 .pull-right1[
-&lt;img src="./assets/images/2-Stat/Fisher.jpg" width="70%" /&gt;
+&lt;img src="./assets/images/2-Stat/Fisher.jpg" alt="" width="70%" /&gt;
 ]
 
 &lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt;
@@ -122,7 +120,7 @@ l'ensemble de techniques et d'outils mathématiques permettant d'analyser des do
 les données textes ou chiffres (alphanumériques) décrivant une population, un ensemble
 
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
@@ -136,15 +134,15 @@ ___
 .center-img[
 .pull-left[
 Ensemble des unités statistiques étudiées : les pays européens
-&lt;img src="./assets/images/2-Stat/Europe.png" width="100%" /&gt;
+&lt;img src="./assets/images/2-Stat/Europe.png" alt="" width="100%" /&gt;
 ]
 
 .pull-right[
 Mais la population peut aussi correspondre à des personnes : 
-&lt;img src="./assets/images/2-Stat/Solvay_conference_1927.jpg" width="100%" /&gt;
+&lt;img src="./assets/images/2-Stat/Solvay_conference_1927.jpg" alt="" width="100%" /&gt;
 ]]
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
@@ -177,9 +175,9 @@ La Belgique est un élément de l'ensemble des pays europééns
    &lt;td style="text-align:left;"&gt; Europe &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 255) !important;"&gt; BLR &lt;/td&gt;
-   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 255) !important;"&gt; Belarus &lt;/td&gt;
-   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 255) !important;"&gt; Europe &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 1) !important;"&gt; BLR &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 1) !important;"&gt; Belarus &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: rgba(215, 38, 30, 1) !important;"&gt; Europe &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; BEL &lt;/td&gt;
@@ -197,10 +195,10 @@ La Belgique est un élément de l'ensemble des pays europééns
 
 .pull-right[
 Marie Curie est un individu de l'ensemble des participants du Congrès de Solvay
-&lt;img src="./assets/images/2-Stat/Marie_Curie_c1920.jpg" width="50%" /&gt;
+&lt;img src="./assets/images/2-Stat/Marie_Curie_c1920.jpg" alt="" width="50%" /&gt;
 ]]
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
@@ -256,7 +254,7 @@ De même que des personnes (Nom, prénom, age, sexe, adresse etc.)
 &lt;/table&gt;
 ]]
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 
 ---
@@ -317,14 +315,14 @@ Marie Curie est une femme née en 1867. Elle a résidé au 36 quai de Béthune, 
 ]]
 
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
 ## Données quantitatives et qualitatives
 On peut caractériser les données en deux grands types, eux-mêmes disposant de sous-caractéristiques. 
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 .pull-left[
 Les données **qualitatives** :
@@ -348,7 +346,7 @@ Caractérise une quantité, par définition mesurable
 ---
 class: animated, fadeIn
 ## Quantitatives et qualitatives ?
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 Il est important de pouvoir justifier le type de données :
 
@@ -361,13 +359,13 @@ Il est important de pouvoir justifier le type de données :
 
 .center-img[
 .pull-right[
-&lt;img src="https://i.imgur.com/E5PQNoK.png" width="100%" /&gt;
+&lt;img src="https://i.imgur.com/E5PQNoK.png" alt="" width="100%" /&gt;
 ]]
 
 ---
 class: animated, fadeIn
 ## Les sous types de données qualitatives
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 Les données qualitatives peuvent avoir d'autres propriétés, importantes en cartographie et en statistique
 
@@ -399,7 +397,7 @@ Qualitatif **exhaustif** : il y a autant de modalités que d'éléments
 ---
 class: animated, fadeIn
 ## Les sous types de données quantitatives
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 Les données **quantitatives** peuvent aussi avoir d'autres propriétés, toutes aussi importantes en cartographie et en statistique
 
@@ -419,7 +417,7 @@ Quantitatif de **taux** : un rapport, un indice.
 ---
 class: animated, fadeIn
 ## Stock ou taux ?
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 .pull-left[
 Comment faire la différence entre stock et taux ? 
@@ -434,14 +432,14 @@ Attention, ce n’est pas parce que la valeur contient une virgule qu’il s’a
 
 .center-img[
 .pull-right[
-&lt;img src="https://i.imgur.com/feMB7iW.png" width="100%" /&gt;
+&lt;img src="https://i.imgur.com/feMB7iW.png" alt="" width="100%" /&gt;
 ]]
 
 
 ---
 class: animated, fadeIn
 ## Les sous types de données quantitatives
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 .pull-left[
 Quantitatif **repérable** : le zéro est conventionnel
@@ -475,10 +473,10 @@ class: animated, fadeIn
 ## En résumé
 
 .zoom[ .center-img[
-&lt;img src="./assets/images/2-Stat/Caractere.png" width="90%" /&gt;
+&lt;img src="./assets/images/2-Stat/Caractere.png" alt="" width="90%" /&gt;
 ]]
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: inverse, center, middle, animated, fadeIn  
@@ -495,7 +493,7 @@ Il existe de nombreux type de tableaux en statistique. Leur forme peut dépendre
 - De la manière dont vous souhaitez analyser vos données (regroupements ?)
 - La manière de mettre en forme les tableaux et les variables est un métier à part dans l’entreprise (data manager)
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
@@ -520,43 +518,43 @@ C'est le cas le plus courant. Il décrit un ensemble d’éléments (lignes du t
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(194, 81, 62, 1) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(194, 81, 62, 1) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; G &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 ]
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
@@ -573,7 +571,7 @@ Le nombre de ligne d’un tableau de contingence (k) correspond au nombre de mod
 
 L’effectif d’une case, noté Nij, correspond au " nombre d’éléments du tableau élémentaire E qui prennent simultanément la modalité i de X et la modalité j de Y ".
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
@@ -592,38 +590,38 @@ Tableau élémentaire de données
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(194, 81, 62, 1) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(194, 81, 62, 1) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; G &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -669,7 +667,7 @@ Transformé en tableau de contingence
 &lt;/table&gt;
 ]
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: animated, fadeIn
@@ -695,38 +693,38 @@ Tableau élémentaire de données
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(194, 81, 62, 1) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(194, 81, 62, 255) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(194, 81, 62, 1) !important;"&gt;1&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;2&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(32, 121, 190, 255) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(32, 121, 190, 1) !important;"&gt;GEO&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; G &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(25, 102, 32, 255) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; &lt;span style="     color: rgba(255, 165, 0, 255) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(25, 102, 32, 1) !important;"&gt;3&lt;/span&gt; &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; &lt;span style="color: rgba(255, 165, 0, 1) !important;"&gt;HIST&lt;/span&gt; &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -806,7 +804,7 @@ Transformé en tableau disjonctif complet
 &lt;/table&gt;
 ]
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 
 ---
@@ -849,7 +847,7 @@ On parle aussi de matrice de flux
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
 
 ---
 class: inverse, center, middle, animated, fadeIn  
@@ -871,7 +869,7 @@ Plusieurs types de tableaux existent et il est nécessaire de les reconnaître
 - Les tableaux de contingence permettent de croiser des caractères
 - Les tableaux d'échanges sont très appréciées des géographes
 
-&lt;div class="my-footer"&gt;&lt;span&gt;ENSG - Licence Pro 2025-2026 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt; 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="assets/libs/remark-latest.min.js"></script>

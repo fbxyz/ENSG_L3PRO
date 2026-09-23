@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>L3_TD 3_sémiologie</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Florian Bayer" />
+    <script src="assets/header-attrs-2.31/header-attrs.js"></script>
+    <link rel="stylesheet" href="assets/css/geodata.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/tools.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+
+class: center, middle, inverse, title-slide, animated, fadeIn
+# Analyse des données Licence Pro 2026-2027
+# TD n°3- La sémiologie graphique avec Magrit&lt;br /&gt; &lt;br /&gt;
+### Florian Bayer
+
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Organisation du TD 3
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+**Première partie (guidée)** : découverte de Magrit et réalisation de trois cartes, une par grand type de données : **stock**, **taux** et **qualitatif**.
+
+**Deuxième partie (en autonomie, individuellement)** : répondre à une commande en produisant deux cartes, puis les vérifier à l'aide d'une grille.
+
+**Objectifs pédagogiques** :
+- Prendre en main un outil de cartographie numérique (Magrit)
+- Choisir l'implantation, la figuration et la variable visuelle adaptées au type de données
+- Mettre en page une carte complète et lisible
+- Porter un regard critique sur ses propres cartes
+
+---
+class: animated, fadeIn
+## Objectif du TD 3
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+Les objectifs de ce TD sont de mettre en application les acquis du cours 3 sur la **sémiologie graphique**.
+
+Pour chaque carte, posez-vous toujours les mêmes questions :
+1. Quel est le **type de données** ? (qualitative nominale, ordinale, quantitative de stock, de taux)
+2. Quelle **notion** faut-il transmettre ? (différence, ordre, proportionnalité)
+3. Quelle **variable visuelle** permet de la transmettre ?
+
+La discrétisation sera étudiée en détail au cours 4 : pour les cartes choroplèthes de ce TD, **conservez la méthode proposée par défaut** par Magrit.
+
+---
+class: inverse, center, middle, animated, fadeIn
+# 1- Prise en main guidée de Magrit
+
+&lt;div class="my-footer-title "&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : présentation
+
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+Magrit est un logiciel de cartographie en ligne.
+
+Il permet de créer facilement des cartes, de les discrétiser et même de les mettre en page.
+
+Il est accessible directement via https://magrit.cnrs.fr/app/
+
+Vous pouvez aussi le déployer sur votre serveur avec Docker
+
+---
+class: animated, fadeIn
+## Magrit : présentation
+
+La vue principale de Magrit est composée d'une zone d'affichage pour la carte et d'une barre d'outils
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_main.png" alt="" width="100%" /&gt;
+]
+
+
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : charger le fond de carte
+
+Il faut charger dans un premier temps le fond de carte :
+- Cliquez sur *Ouvrir la fenêtre d'import des données*
+- Chargez le fichier **monde_iso3.geojson**
+- Cliquez sur *Zoomer sur la couche*
+- Ne **cliquez pas** encore sur *Importer le jeu de données*
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_fond.png" alt="" width="80%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+
+---
+class: animated, fadeIn
+## Magrit : charger les données
+
+Le fond de carte ne contient pas les données que vous allez cartographier. Pour cela, il faut charger le fichier du TD2 sur le niveau de vie des pays du Monde (une colonne **population** a été ajoutée)
+- Cliquez sur *Ouvrir*
+- Chargez le fichier **hdi-edu.csv**. Évitez de prendre le fichier XLSX, Magrit reconnaît mal les fichiers Excel.
+- **Cliquez**  sur *Importer les 2 jeux de données*
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_fonddata.png" alt="" width="80%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : fond et données
+
+Vous devriez voir votre fond de carte et **monde_iso3** et **hdi-edu** dans *Gestion des couches*
+
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_maindata.png" alt="" width="100%" /&gt;
+]
+
+Cependant, Magrit ne fait pas encore le lien entre les deux. Pour cela, il faut faire une **jointure** entre le fond de carte et les données.
+
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Magrit : jointure
+.font80[
+En base de données, une jointure permet de lier le contenu d'au moins deux tables. Ici un fond de carte (une table avec des informations vectorielles) et un tableau.
+
+Cliquez sur le symbole de jointure à côté de **hdi-edu** dans *Gestion des couches*. Pour faire la jointure, il faut des champs avec des données communes aux deux tables. Dans notre cas, le champ ISO_A3 présent sur le fond de carte et les données. Confirmez la jointure
+]
+
+.center-img[
+&lt;img src="./assets/images/TD/TD3_magrit_jointure.png" alt="" width="70%" /&gt;
+]
+
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## Carte 1 : une donnée de stock
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+**Question** : où vit la population mondiale ?
+
+La variable **population** est une donnée **quantitative de stock** : la somme a un sens. La notion à transmettre est la **proportionnalité**, donc la variable visuelle **taille**.
+
+- Cliquez sur la cible à côté de la couche **monde_iso3**
+- Choisissez la représentation *Symboles proportionnels*
+- Variable : **population**
+- Figuré : un **cercle**, sans effet de volume
+- Ajustez la taille du plus grand cercle pour qu'il reste lisible sans masquer les pays voisins
+- Créez la couche
+
+.content-box-blue[
+**À noter** : pourquoi ne faut-il pas représenter la population par une carte choroplèthe ? Qu'est-ce que le lecteur comprendrait ?
+]
+
+---
+class: animated, fadeIn
+## Carte 2 : une donnée de taux
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+**Question** : comment l'espérance de vie varie-t-elle dans le monde ?
+
+La variable **esperance_vie** est une donnée **quantitative de taux** : la somme n'a pas de sens. La notion à transmettre est l'**ordre**, donc la variable visuelle **valeur** (carte choroplèthe).
+
+- Cliquez sur la cible à côté de **monde_iso3**, choisissez *Choroplèthe*
+- Variable : **esperance_vie**, discrétisation proposée par défaut
+- Choisissez une **palette** qui respecte les règles du cours :
+  - un **camaïeu** (une seule teinte, du clair au foncé) ou une **gradation harmonique** (du jaune au rouge)
+  - pas de blanc pour la première classe : il est réservé à l'absence de données
+- Créez la couche, puis affichez-la **sous** la couche des cercles proportionnels
+
+.content-box-blue[
+**À noter** : quel sens de lecture avez-vous choisi (foncé = espérance de vie forte ou faible) ? Pourquoi ?
+]
+
+---
+class: animated, fadeIn
+## Carte 3 : une donnée qualitative
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+**Question** : comment se répartissent les pays selon leur continent, puis selon leur niveau de revenu ?
+
+- **continent** est une donnée **qualitative nominale** : la notion à transmettre est la **différence**, donc la variable visuelle **couleur** (des teintes différentes, de même intensité).
+- **revenu_niveau** est une donnée **qualitative ordinale** (faible, intermédiaire, élevé) : la notion à transmettre est l'**ordre**, donc la **valeur**.
+
+Réalisez les deux cartes avec la représentation *Typologie* (carte qualitative) :
+- Pour **continent**, choisissez des couleurs bien distinctes et harmonieuses
+- Pour **revenu_niveau**, modifiez les couleurs à la main pour obtenir une progression du clair au foncé, **dans le bon ordre**
+
+.content-box-blue[
+**À noter** : que se passe-t-il si l'on garde les couleurs proposées par défaut pour **revenu_niveau** ?
+]
+
+---
+class: animated, fadeIn
+## Habillage et mise en page
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+Une carte n'est pas terminée sans ses éléments d'habillage. Dans l'onglet *Mise en page et éléments d'habillage*, ajoutez :
+
+- Un **titre** qui dit ce que montre la carte (le quoi, le où, le quand)
+- Une **légende** complète : titre de la légende et **unités**
+- La **source** des données : *PNUD, Rapport sur le développement humain ; population : Natural Earth*
+- L'**auteur** et la **date** de réalisation
+
+À l'échelle du monde, l'échelle graphique varie selon la latitude : ne l'ajoutez pas. La flèche du nord est inutile sur un planisphère.
+
+**Exportez** vos cartes en SVG ou en PNG. Nous en corrigerons certaines ensemble.
+
+---
+class: inverse, center, middle, animated, fadeIn
+# 2- À vous de cartographier
+
+&lt;div class="my-footer-title "&gt;&lt;/div&gt;
+
+---
+class: animated, fadeIn
+## La commande
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+**Individuellement**, choisissez **un sujet** et produisez **deux cartes** mises en page qui y répondent.
+
+.font90[
+| Sujet | Question | Variables suggérées |
+|---|---|---|
+| **A. Femmes et pouvoir** | Où les femmes sont-elles les mieux représentées en politique ? | parlement_femmes, population |
+| **B. Transition démographique** | Où en sont les pays dans leur transition démographique ? | transition_demo, taux_fertilite |
+| **C. Emploi** | Où l'agriculture reste-t-elle le premier employeur ? | emploi_agriculture, continent |
+| **D. Éducation** | L'accès à l'école est-il le même pour les filles et les garçons ? | annees_scolarite_femmes, annees_scolarite_hommes |
+]
+
+Vous pouvez superposer deux représentations sur une même carte (par exemple des cercles proportionnels sur une carte choroplèthe) si cela sert votre message.
+
+---
+class: animated, fadeIn
+## Justifier vos choix
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+Pour **chaque carte**, rédigez une courte fiche (5 à 10 lignes) :
+
+1. **Les données** : quelles variables ? Quel type pour chacune ?
+2. **La notion** à transmettre : différence, ordre ou proportionnalité ?
+3. **L'implantation et la figuration** retenues
+4. **La variable visuelle** utilisée, et pourquoi elle est adaptée
+5. **Le message** : que doit retenir le lecteur au premier coup d'œil ?
+
+.content-box-yellow[
+Une carte juste mais sans message n'est pas une bonne carte : le titre et la légende doivent guider le lecteur.
+]
+
+---
+class: animated, fadeIn
+## Vérifier vos cartes
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+Avant de rendre vos cartes, vérifiez-les à l'aide de la grille suivante :
+
+.font90[
+| Critère | Oui / Non |
+|---|---|
+| La variable visuelle est adaptée au type de données | |
+| L'ordre des valeurs est respecté (du clair au foncé) | |
+| Le blanc est réservé à l'absence de données | |
+| Les cercles sont proportionnels (et sans effet de volume) | |
+| Le titre dit ce que montre la carte | |
+| La légende est complète (titre, unités) | |
+| La source, l'auteur et la date sont indiqués | |
+| Le message se comprend au premier coup d'œil | |
+]
+
+Corrigez vos cartes pour chaque critère non respecté.
+
+---
+class: animated, fadeIn
+## Fin du TD 3
+&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
+
+Dans ce TD, vous avez appris :
+- A charger des données dans Magrit et à faire une jointure
+- A choisir une représentation adaptée au type de données : symboles proportionnels, choroplèthe, typologie
+- A choisir des couleurs qui respectent les règles de la sémiologie graphique
+- A mettre en page une carte complète
+- A vérifier une carte de manière critique
+
+**À rendre** : vos deux cartes exportées et leurs fiches de justification.
+
+Dans le prochain cours, nous verrons comment **discrétiser** une série statistique pour les cartes choroplèthes.
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="assets/libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
