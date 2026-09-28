@@ -66,8 +66,9 @@ Vous apprendrez à manipuler :
 Les TD reprendrons le contenu des cours :
 1. Les données statistiques
 2. L'analyse univariée
-3. La discrétisation
-4. La corrélation
+3. La sémiologie graphique
+4. La discrétisation
+5. La corrélation
 
 ---
 class: animated, fadeIn
@@ -167,7 +168,7 @@ class: animated, fadeIn
 
 Chaque binôme partage :
 - **Un constat marquant** issu de vos analyses
-- **Une hypothèse** pour expliquer une différence observée entre pays ou régions
+- **Une question** que soulève une différence observée entre pays ou régions (nous y reviendrons au fil du cours)
 - **Une limite** identifiée dans ce jeu de données
 
 **Préparation aux TD suivants** :

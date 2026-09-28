@@ -247,26 +247,44 @@ class: animated, fadeIn
 
 ---
 class: animated, fadeIn
-## Comprendre les outliers africains
+## Situer les pays extrêmes
 
 <div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
-À partir de votre analyse des pays africains, vous devez expliquer pourquoi certains pays ont des espérances de vie si différentes.
+À partir de votre analyse des pays africains, vous allez **décrire** vos deux pays opposés en les situant dans la distribution des autres variables.
 
 **Étape 3 - Identifier les cas extrêmes** :
-- **Pays avec la plus haute espérance de vie** : _______________
-- **Pays avec la plus basse espérance de vie** : _______________
-- **Outliers détectés** (si il y en a) : _______________
+- **Pays avec la plus haute espérance de vie** : …………………………
+- **Pays avec la plus basse espérance de vie** : …………………………
+- **Outliers détectés** (si il y en a) : …………………………
 
-**Étape 4 - Formuler des hypothèses** :
-Avant de regarder les données, quelles pourraient être les raisons de ces différences ?
-- 1 _______________________________________________
-- 2 _______________________________________________
-- 3 _______________________________________________
+**Étape 4 - Dresser le profil des deux pays** :
 
-**Étape 3 - Tester vos hypothèses** :
+Choisissez 4 ou 5 autres variables (économiques, sociales, sanitaires ; l'onglet **Meta** décrit les indicateurs). Pour chacune, situez vos deux pays parmi les pays africains à l'aide de **Feature Statistics** et du **Box Plot** : au-dessus ou au-dessous de la médiane ? Dans quel quartile ? Est-ce un outlier ?
 
-Explorez les autres variables (économiques, sociales, sanitaires) pour vos pays extrêmes. Utilisez l'onglet **Meta** pour comprendre les indicateurs.
+---
+class: animated, fadeIn
+## Profil des pays : tableau à compléter
+
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+.font90[
+| Variable | Médiane (Afrique) | Pays 1 | Position | Pays 2 | Position |
+|---|---|---|---|---|---|
+| esperance_vie | | | | | |
+| ............... | | | | | |
+| ............... | | | | | |
+| ............... | | | | | |
+| ............... | | | | | |
+]
+
+*Position* : 1er, 2e, 3e ou 4e quartile, ou outlier.
+
+**Étape 5 - Des questions pour la suite** :
+- Pour quelles variables vos deux pays s'opposent-ils le plus ?
+- Pour lesquelles sont-ils proches, malgré des espérances de vie très différentes ?
+
+Notez ces pistes : vous ne pouvez pas encore conclure, deux pays ne suffisent pas à établir un lien entre deux variables. Nous les testerons sur l'ensemble des pays au cours 5.
 
 ---
 class: animated, fadeIn
@@ -274,21 +292,24 @@ class: animated, fadeIn
 
 <div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
+.font90[
 **Tour de table** : Chaque binôme présente en 1 minute :
-- Leurs pays extrêmes choisis et leurs hypothèses principales
+- Leurs deux pays extrêmes et leur profil
+- La variable pour laquelle ils s'opposent le plus
 - Une découverte surprenante dans les données
 
 **Questions de débriefing** :
-- Quelles variables explicatives reviennent le plus souvent ?
-- Y a-t-il des pays difficiles à expliquer avec vos hypothèses ?
-- Vos hypothèses initiales étaient-elles confirmées ou infirmées ?
+- Quelles variables distinguent le plus souvent les pays extrêmes ?
+- Certains pays sont-ils atypiques (outliers) pour plusieurs variables à la fois ?
+- Peut-on affirmer qu'une variable « explique » l'espérance de vie à partir de deux pays ?
 
 **Synthèse pédagogique** :
 - **Dispersion** : L'écart-type révèle des sous-groupes de pays avec des profils similaires
-- **Corrélation ≠ causalité** : Vous avez identifié des associations, mais attention aux explications simplistes
+- **Position** : Une valeur ne prend son sens que située dans une distribution (médiane, quartiles, outliers)
 - **Contextualisation** : Les chiffres racontent des histoires humaines et géographiques
-- **Démarche scientifique** : Hypothèse → Test → Interprétation critique
-- **Préparation bivariée** : Vous avez intuitivement cherché des corrélations, nous allons maintenant les mesurer !
+- **Démarche scientifique** : Observer, décrire, puis formuler des questions à tester
+- **Prudence** : Deux pays ne font pas une règle. Pour savoir si deux variables varient ensemble, il faudra mesurer leur relation sur l'ensemble des pays
+]
 
 ---
 class: animated, fadeIn
@@ -305,14 +326,14 @@ class: animated, fadeIn
 
 .pull-right[
 **Compétences analytiques :**
-- Formuler des hypothèses avant l'analyse des données
-- Identifier et expliquer les valeurs aberrantes (outliers)
+- Décrire le profil d'un individu à partir de plusieurs variables
+- Identifier les valeurs extrêmes et aberrantes (outliers)
 - Comprendre qu'une moyenne cache des disparités (importance de l'écart-type)
 - Contextualiser les résultats statistiques avec des connaissances géographiques
-- Passer de l'observation à l'explication causale
+- Situer un individu dans une distribution (médiane, quartiles, outliers)
 ]
 
-Cette démarche d'investigation vous a préparés à l'analyse bivariée : vous avez commencé à chercher des liens entre variables (espérance de vie ↔ revenus, éducation, santé...). Dans les prochains cours, nous formaliserons ces intuitions avec les techniques de corrélation et la cartographie statistique.
+Vous avez repéré des variables pour lesquelles les pays extrêmes s'opposent. Pour savoir si ces variables évoluent réellement ensemble sur l'ensemble des pays, il faudra mesurer leur relation : ce sera l'objet du cours 5 sur la corrélation. D'ici là, les cours 3 et 4 porteront sur la cartographie de ces données.
 
 <div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
 
