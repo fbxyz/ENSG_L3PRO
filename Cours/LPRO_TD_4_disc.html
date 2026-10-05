@@ -28,12 +28,10 @@ class: center, middle, inverse, title-slide, animated, fadeIn
 
 ---
 class: animated, fadeIn
-## Organisation du TD 4 - Groupes de travail
+## Organisation du TD 4
 &lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
 
-**Première partie** : en individuel, tester les méthodes de discrétisation dans Magrit sur la carte de l'espérance de vie du TD 3.
-
-**Deuxième partie** : Travail en groupe « même données, messages opposés » : orienter le message d'une carte par la seule discrétisation, avec **présentation PowerPoint** de 5 minutes par groupe.
+**Travail en binômes** « même données, messages opposés » : orienter le message d'une carte par la seule discrétisation, avec **présentation PowerPoint** de 5 minutes par binôme.
 
 **Objectifs pédagogiques** :
 - Comprendre l'impact des choix de discrétisation sur le message cartographique
@@ -49,57 +47,11 @@ Les objectifs de ce TD sont de mettre en application les acquis du cours 4 sur l
 
 **Rappel (TD 3)** : dans Magrit, rechargez le fond **monde_iso3.geojson** et les données **hdi-edu.csv**, puis refaites la **jointure** sur le champ ISO_A3.
 
----
-class: inverse, center, middle, animated, fadeIn
-# 1- Tester les méthodes de discrétisation
-
-&lt;div class="my-footer-title "&gt;&lt;/div&gt;
-
----
-class: animated, fadeIn
-## Magrit : carte choroplèthe
-
-Vous allez maintenant créer une carte choroplèthe.
-- Cliquez sur la cible à côté de la couche monde_iso3.
-- Dans la nouvelle fenêtre, choisissez *Choroplèthe*.
-- Dans variable, choisissez **esperance_vie**
-- Enfin, dans Discrétisation, cliquez sur la discrétisation manuelle &lt;i class="fa-solid fa-gear"&gt;&lt;/i&gt;
-
-
-.center-img[
-&lt;img src="./assets/images/TD/TD3_magrit_chorovar.png" alt="" width="70%" /&gt;
-]
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
-
----
-class: animated, fadeIn
-## Magrit : discrétisation
-
-.pull-left[.font90[Dans la nouvelle fenêtre, des informations sur la distribution s'affichent.
-
-L'objectif de notre carte sera de découvrir la répartition spatiale de l'espérance de vie dans les pays du Monde.
-
-Testez les différentes méthodes (quantiles, Q6, amplitudes égales, moyenne et écart-type, Jenks) et observez l'effet sur la carte. Choisissez la méthode qui vous paraît la plus pertinente en fonction du contexte et de la forme de la distribution.
-
-**Justifiez votre choix par écrit**
-
-**Confirmer** puis **Créer la couche**
-]]
-
-.pull-right[.center-img[
-&lt;img src="./assets/images/TD/TD3_magrit_discret.png" alt="" width="100%" /&gt;
-]]
-
-
-
-&lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
-
+Pour discrétiser : cible à côté de **monde_iso3** &gt; *Choroplèthe* &gt; variable, puis discrétisation manuelle &lt;i class="fa-solid fa-gear"&gt;&lt;/i&gt;. La fenêtre affiche la distribution de la série et permet de choisir la méthode, le nombre de classes et les bornes.
 
 ---
 class: inverse, center, middle, animated, fadeIn
-# 2- Exercice en groupes : même données, messages opposés
+# Exercice en binômes : même données, messages opposés
 
 &lt;div class="my-footer-title "&gt;&lt;/div&gt;
 
@@ -134,7 +86,7 @@ class: animated, fadeIn
 &lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
 
 .pull-left[
-**Imposé à tous les groupes** :
+**Imposé à tous les binômes** :
 - La variable : **mortalite_infantile**
 - Le fond de carte : **monde_iso3**
 - La palette : **YlOrRd** (du jaune au rouge)
@@ -145,7 +97,7 @@ class: animated, fadeIn
 .pull-right[
 **Vos leviers** :
 - La **méthode** de discrétisation
-- Le **nombre de classes** (de 3 à 7)
+- Le **nombre de classes** (de 4 à 6)
 - Les **bornes manuelles** si besoin
 ]
 
@@ -163,9 +115,9 @@ class: animated, fadeIn
 
 &lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
 
-**6 groupes de 4**. Chaque groupe tire au sort sa mission, **sans la révéler** aux autres groupes :
-- **Groupes 1 à 3** : ONG A « Le monde converge »
-- **Groupes 4 à 6** : ONG B « La fracture persiste »
+**5 binômes**. Chaque binôme tire au sort sa mission, **sans la révéler** aux autres :
+- **3 binômes** : ONG A « Le monde converge »
+- **2 binômes** : ONG B « La fracture persiste »
 
 **Étapes** :
 1. **Analyser la distribution** de mortalite_infantile dans Magrit : forme, valeurs centrales, dispersion, valeurs extrêmes.
@@ -179,19 +131,19 @@ class: animated, fadeIn
 
 &lt;div class="my-footer"&gt;&lt;span&gt;Géodata Paris - Licence Pro 2026-2027 : analyse de données - Florian Bayer&lt;/span&gt;&lt;/div&gt;
 
-Pour chaque groupe (5 minutes) :
+Pour chaque binôme (5 minutes) :
 
 **1. La carte seule** (30 secondes, sans commentaire) :
 - La salle vote : ONG A ou ONG B ?
 - Quel levier a été utilisé selon vous ?
 
-**2. Le groupe révèle sa mission et se justifie** :
+**2. Le binôme révèle sa mission et se justifie** :
 - Méthode, nombre de classes et bornes choisies
 - L'histogramme de la série avec vos bornes de classes
 - Pourquoi ce choix sert-il le message de votre commanditaire ?
 - Quels pays sont mis en valeur ou « cachés » par votre discrétisation ?
 
-**3. Critique** : les autres groupes peuvent poser une question critique.
+**3. Critique** : les autres binômes peuvent poser une question critique.
 
 ---
 class: animated, fadeIn
