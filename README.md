@@ -36,7 +36,8 @@ Ce cours est destiné aux étudiants de Géodata Paris (ex-ENSG), Licence Profes
 
 ### 4. Méthodes de discrétisation en cartographie
    - [Cours : LPRO_Cours_4_disc.pdf](https://github.com/fbxyz/ENSG_L3PRO/blob/main/Cours/pdf/LPRO_Cours_4_disc.pdf)
-   - [TD : LPRO_TD_4_disc.pdf](https://github.com/fbxyz/ENSG_L3PRO/blob/main/Cours/pdf/LPRO_TD_4_disc.pdf)
+   - [TD : LPRO_TD_4_disc_methodes.pdf](https://github.com/fbxyz/ENSG_L3PRO/blob/main/Cours/pdf/LPRO_TD_4_disc_methodes.pdf) : une méthode de discrétisation imposée par binôme
+   - [TD (variante) : LPRO_TD_4_disc.pdf](https://github.com/fbxyz/ENSG_L3PRO/blob/main/Cours/pdf/LPRO_TD_4_disc.pdf) : même données, messages opposés
 
 ### 5. Analyse bivariée : test du chi2
    - [Cours : LPRO_Cours_5_chi2.pdf](https://github.com/fbxyz/ENSG_L3PRO/blob/main/Cours/pdf/LPRO_Cours_5_chi2.pdf)

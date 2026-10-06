@@ -1,0 +1,177 @@
+---
+title: "L3_TD 4_discrétisation (méthodes)"
+author: "Florian Bayer"
+output:
+  xaringan::moon_reader:
+    lib_dir: assets
+    chakra: assets/libs/remark-latest.min.js
+    css: [
+    "./assets/css/geodata.css",
+    "./assets/css/animate.css",
+    "./assets/css/tools.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    seal: false
+
+---
+```{r setup, global_options,include=FALSE}
+knitr::opts_chunk$set(
+  dpi = 200,
+  strip.white = T,
+  message = FALSE,
+  comment = NA,
+  echo = FALSE,
+  warning = FALSE,
+  eval = TRUE
+  
+)
+```
+
+```{r include=FALSE}
+source('./assets/functions.R')
+
+requiredPackages = c('knitr','png','grid','gridExtra',
+                     'RColorBrewer','dotenv')
+
+PackageFacile(requiredPackages)
+
+load_dot_env(".env")
+annee = Sys.getenv("annee")
+
+```
+
+
+
+class: center, middle, inverse, title-slide, animated, fadeIn
+# Analyse des données Licence Pro `r annee`
+# TD n°4- La discrétisation en cartographie<br /> <br />
+### Florian Bayer
+
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+---
+class: animated, fadeIn
+## Organisation du TD 4
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Travail en binômes** : chaque binôme produit **une carte** de l'espérance de vie avec une méthode de discrétisation **imposée**, puis la défend lors d'une **présentation PowerPoint** de 5 minutes.
+
+**Objectifs pédagogiques** :
+- Analyser la distribution d'une série avant de la cartographier
+- Connaître les avantages et les inconvénients des méthodes de discrétisation
+- Argumenter un choix cartographique avec des arguments scientifiques
+- Comprendre l'impact de la discrétisation sur le message cartographique
+
+---
+class: animated, fadeIn
+## Objectif du TD 4
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+Les objectifs de ce TD sont de mettre en application les acquis du cours 4 sur la discrétisation en cartographie.
+
+**Rappel (TD 3)** : dans Magrit, rechargez le fond **monde_iso3.geojson** et les données **hdi-edu.csv**, puis refaites la **jointure** sur le champ ISO_A3.
+
+Pour discrétiser : cible à côté de **monde_iso3** > *Choroplèthe* > variable, puis discrétisation manuelle <i class="fa-solid fa-gear"></i>. La fenêtre affiche la distribution de la série et permet de choisir la méthode, le nombre de classes et les bornes.
+
+---
+class: inverse, center, middle, animated, fadeIn
+# Exercice en binômes : défendre sa discrétisation
+
+<div class="my-footer-title "></div>
+
+---
+class: animated, fadeIn
+## Mise en situation
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+**Commanditaire** : Organisation Mondiale de la Santé (OMS)
+
+**Contexte** : préparation du rapport annuel « Inégalités de santé dans le monde »
+
+**Demande** : une carte de l'**espérance de vie** dans le monde, pour sensibiliser les décideurs politiques aux inégalités de santé.
+
+**Public cible** : ministres de la Santé européens
+
+**Votre mission** : en tant que bureau d'études en géomatique, vous devez convaincre l'OMS que **votre** méthode de discrétisation est la plus adaptée à cette commande.
+
+---
+class: animated, fadeIn
+## Une méthode imposée, le reste au choix
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+.pull-left[
+**Tirage au sort** : chaque binôme reçoit **une** méthode de discrétisation :
+- **Binôme 1** : quantiles
+- **Binôme 2** : Q6
+- **Binôme 3** : amplitudes égales
+- **Binôme 4** : moyenne et écart-type
+- **Binôme 5** : seuils naturels (Jenks)
+]
+
+.pull-right[
+**Imposé** :
+- La variable : **esperance_vie**
+- Le fond de carte : **monde_iso3**
+- La méthode de discrétisation tirée au sort
+
+**Au choix** :
+- Le **nombre de classes** (de 4 à 6 ; 6 pour Q6)
+- La **palette**, en respectant les règles de la sémiologie graphique (cours 3)
+- La **mise en page** : titre, légende, source
+]
+
+<br />
+
+.content-box-yellow[
+Vous ne choisissez pas votre méthode, mais vous devez en tirer **la meilleure carte possible**.
+]
+
+---
+class: animated, fadeIn
+## Rendu : défendre sa méthode
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+Chaque binôme prépare **2 à 4 slides PowerPoint** (5 minutes) pour :
+
+1. **Analyser la distribution** de l'espérance de vie : histogramme, valeurs centrales, paramètres de dispersion, valeurs extrêmes
+2. **Présenter la méthode** attribuée : principe, avantages et inconvénients
+3. **Argumenter** en faveur de votre méthode avec des arguments **scientifiques** : pourquoi est-elle adaptée à cette distribution et à la commande de l'OMS ?
+4. **Illustrer** votre propos avec votre carte : nombre de classes, bornes, palette, pays mis en valeur ou « cachés »
+
+**Critique** : après chaque présentation, les autres binômes peuvent poser une question critique.
+
+---
+class: animated, fadeIn
+## Débriefing : quelle méthode choisir ?
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
+
+Les cinq cartes sont projetées côte à côte.
+
+**Questions collectives** :
+- Quelle carte répond le mieux à la commande de l'OMS ? Pourquoi ?
+- Quels pays changent complètement de classe selon la méthode ?
+- Quelle méthode met le mieux en évidence les inégalités mondiales ?
+- Quel rôle a joué la forme de la distribution (étalée vers les faibles valeurs) ?
+
+**Synthèse pédagogique** :
+- **Il n'y a pas de « bonne » discrétisation universelle** → tout dépend de l'objectif cartographique et du public
+- **La forme de la distribution guide le choix** de la méthode
+- **La discrétisation est un acte de communication** → elle oriente la lecture et l'interprétation
+- **Transparence méthodologique** → toujours indiquer et justifier sa méthode de discrétisation
+
+---
+class: animated, fadeIn
+## Fin du TD 4
+
+Dans ce TD, vous avez appris :
+- A analyser une distribution avant de la discrétiser
+- A discrétiser une série statistique dans Magrit
+- A connaître les forces et les limites des principales méthodes de discrétisation
+- A argumenter un choix cartographique de manière scientifique
+
+Dans le prochain cours, nous verrons ensemble comment mesurer les liens entre deux caractères.
+
+<div class="my-footer"><span>Géodata Paris - Licence Pro `r annee` : analyse de données - Florian Bayer</span></div>
